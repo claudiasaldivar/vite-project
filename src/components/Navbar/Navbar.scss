@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 1rem;
+    font-weight: lighter;
+  }
+  
+  .navbar-list {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-item {
+    margin: 0;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+  }
+  
+  .navbar-link:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-link.active {
+    text-decoration: underline;
+  }
+  
+  .navbar-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .navbar-count {
+    font-size: 0.75rem;
+  }
+  

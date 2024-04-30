@@ -1,0 +1,27 @@
+.home-title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .home-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .search-input {
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 80%;
+    margin-bottom: 1rem;
+    outline: none;
+  }
+  
+  .product-grid {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  

@@ -1,0 +1,44 @@
+.orders-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid black;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .card-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .total-products {
+    font-weight: lighter;
+  }
+  
+  .price-and-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .chevron-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: black;
+    cursor: pointer;
+  }
+  

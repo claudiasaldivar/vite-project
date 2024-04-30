@@ -1,0 +1,29 @@
+.my-order-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .back-link {
+    margin-right: 1rem;
+  }
+  
+  .back-icon {
+    width: 24px;
+    height: 24px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .my-order-title {
+    font-size: 1rem;
+  }
+  
+  .order-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+  }
+  
