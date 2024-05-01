@@ -1,6 +1,6 @@
 import React from 'react';
 import { XMarkIcon } from '@heroicons/react/24/solid';
-import './OrderCard.scss'; // Importa el archivo Sass donde defines tus estilos
+import './OrderCard.scss';
 
 const OrderCard = ({ id, title, image, price, handleDelete }) => {
   return (

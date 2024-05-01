@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ShoppingCartContext } from '../../context';
 import { XMarkIcon } from '@heroicons/react/24/solid';
-import './ProductDetail.scss'; // Importa el archivo Sass donde defines tus estilos
+import './ProductDetail.scss'; 
 
 const ProductDetail = () => {
     const { isProductDetailOpen, closeDetail, productDetail } = useContext(ShoppingCartContext);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/layout";
 import OrdersCard from "../../components/ordersCard";
 import { ShoppingCartContext } from '../../context';
-import './MyOrders.scss'; // Importa el archivo Sass donde defines tus estilos
+import './MyOrders.scss'; 
 
 const MyOrders = () => {
   const { order } = useContext(ShoppingCartContext);

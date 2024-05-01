@@ -4,7 +4,7 @@ import Card from "../../components/card";
 import ProductDetail from "../../components/productDetail";
 import SideMenu from '../../components/sideMenu';
 import { ShoppingCartContext } from "../../context";
-import './Home.scss'; // Importa el archivo Sass donde defines tus estilos
+import './Home.scss'; 
 
 const Home = () => {
   const { items, setSearchValue, searchValue, filteredItems } = useContext(ShoppingCartContext);

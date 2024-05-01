@@ -6,7 +6,7 @@ import './Navbar.scss'; // Importar el archivo Sass donde defines tus estilos
 
 const Navbar = () => {
     const activeStyle = "underline underline-offset-4";
-    const { count, setSearchCategory } = useContext(ShoppingCartContext);
+    const { count, setSearchCategory, login, setEmail, setPassword, setLogin } = useContext(ShoppingCartContext);
     const data = ['/electronics', '/jewelery', '/men', '/women'];
 
     return (
@@ -28,23 +28,34 @@ const Navbar = () => {
                     <NavLink onClick={() => setSearchCategory('women')} to={data[3]} className="navbar-link" activeClassName={activeStyle}>Women's clothing</NavLink>
                 </li>
             </ul>
-            <ul className="navbar-list navbar-right">
-                <li className="navbar-item">
-                    <NavLink to='/my-orders' className="navbar-link" activeClassName={activeStyle}>My Orders</NavLink>
-                </li>
-                <li className="navbar-item">
-                    <NavLink to='/my-account' className="navbar-link" activeClassName={activeStyle}>My Account</NavLink>
-                </li>
-                <li className="navbar-item">
-                    <NavLink to='/sign-in' className="navbar-link" activeClassName={activeStyle}>Sign in</NavLink>
-                </li>
-                <li className="navbar-item">
-                    <NavLink to='/cart' className="navbar-link" activeClassName={activeStyle}>
-                        <ShoppingCartIcon className="navbar-icon" />
-                        <span className="navbar-count">{count}</span>
-                    </NavLink>
-                </li>
-            </ul>
+                <ul className="navbar-list navbar-right">
+                {(login) ? (
+                    <>
+                    <li className="navbar-item">
+                        <NavLink to='/my-orders' className="navbar-link" activeClassName={activeStyle}>My Orders</NavLink>
+                    </li>
+                    <li className="navbar-item">
+                        <NavLink to='/my-account' className="navbar-link" activeClassName={activeStyle}>My Account</NavLink>
+                    </li>
+                    <li className="navbar-item">
+                        <NavLink to='/cart' className="navbar-link" activeClassName={activeStyle}>
+                            <ShoppingCartIcon className="navbar-icon" />
+                            <span className="navbar-count">{count}</span>
+                        </NavLink>
+                    </li>
+                    <li className="navbar-item" onClick={() =>{
+                        setEmail('')
+                        setPassword('')
+                        setLogin(false)
+                    }}>
+                        <NavLink to='/sign-in' className="navbar-link" activeClassName={activeStyle}>Cerrar sesión</NavLink>
+                    </li>
+                    </>
+                ):     <li className="navbar-item">
+                        <NavLink to='/sign-in' className="navbar-link" activeClassName={activeStyle}>Sign in</NavLink>
+                    </li>}
+                    
+                </ul>            
         </nav>
     );
 };

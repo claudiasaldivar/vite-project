@@ -12,10 +12,10 @@ const Card = ({ item }) => {
   };
 
   const addProducts = (e, data) => {
-    setCart([...cart, data]);
-    setCount(count + 1);
-    closeDetail();
-    openSideMenu();
+      setCart([...cart, data]);
+      setCount(count + 1);
+      closeDetail();
+      openSideMenu();
   };
 
   const renderIcon = (id) => {

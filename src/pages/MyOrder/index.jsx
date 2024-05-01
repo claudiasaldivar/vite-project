@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import OrderCard from '../../components/orderCard';
 import { ShoppingCartContext } from '../../context';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
-import './MyOrder.scss'; // Importa el archivo Sass donde defines tus estilos
+import './MyOrder.scss'; 
 
 const MyOrder = () => {
   const { order } = useContext(ShoppingCartContext);

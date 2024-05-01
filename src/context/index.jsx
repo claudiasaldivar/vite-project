@@ -1,10 +1,14 @@
 import { createContext, useState, useEffect } from 'react'
+import { getProducts, postProduct, putProduct } from '../services/products'
 
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({children}) => {
     const [count, setCount] = useState(0)
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false)
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [login, setLogin] = useState(false)
 
     const [productDetail, setProductDetail] = useState({})
     const [cart, setCart] = useState([])
@@ -19,14 +23,19 @@ export const ShoppingCartProvider = ({children}) => {
 
     const [items, setItems] = useState(null)
     const [filteredItems, setFilteredItems] = useState(null)
+    const [modalAbierto, setModalAbierto] = useState(false);
 
-  useEffect(() => {
-    const url = 'https://fakestoreapi.com/products'
-    fetch(url)
-      .then(response => response.json())
-      .then(data => setItems(data))
-  }, [])
+    const abrirModal = () => {
+      setModalAbierto(true);
+    };
+  
+    const cerrarModal = () => {
+      setModalAbierto(false);
+    };
 
+    useEffect(() => {
+      getProducts().then(res => setItems(res))
+    }, []);
 
   const [searchValue, setSearchValue] = useState(null)
   const [searchCategory, setSearchCategory] = useState(null)
@@ -64,6 +73,14 @@ export const ShoppingCartProvider = ({children}) => {
     if(!searchCategory && !searchValue) setFilteredItems(filterBy(null, items, searchValue, searchCategory))
   }, [items, searchValue, searchCategory])
 
+  const addProduct = ({...params}) => {
+    postProduct({...params})
+  }
+
+  const updateProduct = (id, product) => {
+    putProduct(id, product)
+  }
+
     const data = {
         count,
         isProductDetailOpen,
@@ -75,6 +92,11 @@ export const ShoppingCartProvider = ({children}) => {
         searchValue,
         filteredItems,
         searchCategory,
+        email,
+        password,
+        login,
+        modalAbierto, 
+        setModalAbierto,
         setCount,
         openDetail,
         closeDetail,
@@ -85,7 +107,14 @@ export const ShoppingCartProvider = ({children}) => {
         setOrder,
         setItems,
         setSearchValue,
-        setSearchCategory
+        setSearchCategory,
+        setEmail,
+        setPassword,
+        setLogin,
+        addProduct,
+        updateProduct,
+        abrirModal,
+        cerrarModal
     }
   return (
     <ShoppingCartContext.Provider value={data}>

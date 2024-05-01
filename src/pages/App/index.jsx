@@ -6,6 +6,7 @@ import MyOrder from '../MyOrder'
 import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
+import Admin from '../Admin'
 import Navbar from '../../components/Navbar'
 import { ShoppingCartProvider } from '../../context'
 
@@ -23,6 +24,7 @@ const AppRoutes = () => {
     {path: '/my-orders/:id',element: <MyOrder />},
     {path: '/my-orders',element: <MyOrders />},
     {path: '/sign-in',element: <SignIn />},
+    {path: '/admin', element: <Admin />},
     {path: '/*',element: <NotFound />},
   ])
 

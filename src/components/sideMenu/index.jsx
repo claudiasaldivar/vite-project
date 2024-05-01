@@ -4,7 +4,7 @@ import { ShoppingCartContext } from '../../context';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import OrderCard from '../orderCard';
 import { totalPrice } from '../../utils';
-import './SideMenu.scss'; // Importa el archivo Sass donde defines tus estilos
+import './SideMenu.scss'; 
 
 const SideMenu = () => {
     const { sideMenu, closeSideMenu, cart, setCart, setCount, count, setOrder, order, setSearchValue } = useContext(ShoppingCartContext);
